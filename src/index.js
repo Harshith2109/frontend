@@ -1,13 +1,44 @@
+import Layout from "./layout.js";
+import Hero from "./components/Hero.js";
+import About from "./components/About.js";
+import Contact from "./components/Contact.js";
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  createRoutesFromElements,
+  
+} from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter(
+  createRoutesFromElements(
+  <Route path="/" element={<Layout/>}>
+
+    <Route path="/" element={<Hero/>}/>
+    <Route path="/about" element={<About/>}/>
+    <Route path="/contact" element={<Contact/>}/>
+
+  </Route>
+
+));
 root.render(
   <React.StrictMode>
-    <App />
+    
+    
+     
+     {/* <NavBar /> */}
+     <RouterProvider router={router} />
+     {/* <Footer /> */}
+
+ 
+    
   </React.StrictMode>
 );
 
