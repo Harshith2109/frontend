@@ -11,7 +11,7 @@ export default function Contact() {
       e.preventDefault();
     
       try{
-        const response = await fetch('http://localhost:8000/contacts/', {
+        const response = await fetch('https://harshith.info:8000/contacts/', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
